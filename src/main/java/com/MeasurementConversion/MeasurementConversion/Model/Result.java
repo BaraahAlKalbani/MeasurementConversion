@@ -1,15 +1,15 @@
-package Model;
+package com.MeasurementConversion.MeasurementConversion.Model;
 
 import java.util.ArrayList;
 
 public class Result {
     private ArrayList<Integer> converted_value;
-    private char[] char_list;
+    private char[] input;
     private String status ;
 
     public Result(ArrayList<Integer> converted_value, char[] char_list, String status) {
         this.converted_value = converted_value;
-        this.char_list = char_list;
+        this.input = char_list;
         this.status = status;
     }
 
@@ -21,19 +21,19 @@ public class Result {
         this.converted_value = converted_value;
     }
 
-    public char[] getChar_list() {
-        return char_list;
-    }
-
-    public void setChar_list(char[] char_list) {
-        this.char_list = char_list;
-    }
-
     public String getStatus() {
         return status;
     }
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public char[] getInput() {
+        return input;
+    }
+
+    public void setInput(char[] input) {
+        this.input = input;
     }
 }
