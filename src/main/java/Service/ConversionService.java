@@ -11,56 +11,61 @@ public class ConversionService {
     private static final Logger logger = LoggerFactory.getLogger(ConversionService.class);
 
     public static ArrayList<Integer> decodeString(String input) {
+        if (!input.matches("[a-z_A-Z]+")) {
+            logger.info("Invalid Input!");
+            throw new IllegalArgumentException("Invalid input. Input should only contain characters from 'a' to 'z' and '_'.");
+        }
         char[] charArray = input.toCharArray();
         ArrayList<Integer> decodedValues = new ArrayList<>();
 
         int index = 0;
         while (index < charArray.length) {
-            char ch = charArray[index];
-            int number = getNumberFromChar(ch);
+            char currChar = charArray[index];
+            int numberOfCharGroup = getNumberFromChar(currChar);
             int value = 0;
 
-            if (ch == 'z') {
-                while (ch == 'z' && index + 1 < charArray.length) {
+            if (currChar == 'z') {
+                while (currChar == 'z' && index + 1 < charArray.length) {
                     index++;
-                    ch = charArray[index];
-                    number += getNumberFromChar(ch);
+                    currChar = charArray[index];
+                    numberOfCharGroup += getNumberFromChar(currChar);
                 }
             }
 
-            if (index + number > charArray.length) {
+            if (index + numberOfCharGroup > charArray.length) {
                 break;
             }
 
-            if (ch == '_') {
+            if (currChar == '_') {
                 if (index < charArray.length - 1) {
                     decodedValues.add(0);
-                    number = getNumberFromChar(ch);
+                    numberOfCharGroup = getNumberFromChar(currChar);
                 }
                 break;
             } else {
-                value = calculateValue(charArray, index, number);
+                value = calculateValue(charArray, index, numberOfCharGroup);
                 decodedValues.add(value);
-                index += number + 1;
+                index += numberOfCharGroup + 1;
             }
         }
-
+        logger.info("Input: "+input);
+        logger.info("Result:"+decodedValues);
         return decodedValues;
     }
 
-    private static int getNumberFromChar(char ch) {
-        if (ch == '_') {
+    private static int getNumberFromChar(char currChar) {
+        if (currChar == '_') {
             return 0;
         } else {
-            return ch - 'a' + 1;
+            return currChar - 'a' + 1;
         }
     }
 
     private static int calculateValue(char[] charArray, int startIndex, int length) {
         int value = 0;
-        for (int i = 1; i <= length && startIndex + i < charArray.length; i++) {
-            char ch = charArray[startIndex + i];
-            value += getNumberFromChar(ch);
+        for (int iterator = 1; iterator <= length && startIndex + iterator < charArray.length; iterator++) {
+            char currChar = charArray[startIndex + iterator];
+            value += getNumberFromChar(currChar);
         }
         return value;
     }
