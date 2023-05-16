@@ -90,4 +90,8 @@ If the input is invalid, the API will return an error message in the response:
 }
  ```
 
+<<<<<<< HEAD
 That's it! You have successfully set up and run the Measurement Conversion API using Docker.
+=======
+That's it! You have successfully set up and run the Measurement Conversion API using Docker.
+>>>>>>> 0c606a61f87a3cda1a40d72d50f69c50b61d0082
