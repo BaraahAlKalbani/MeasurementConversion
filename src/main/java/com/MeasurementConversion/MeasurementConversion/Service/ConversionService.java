@@ -17,12 +17,12 @@ public class ConversionService {
 
     private static void validateInput(String input) {
         if (!input.matches("[a-z_A-Z]+")) {
-            logger.info("Invalid Input!");
+            logger.info("Invalid Input!: check Input Length ");
             throw new IllegalArgumentException("Invalid input. Input should only contain characters from 'a' to 'z' and '_'.");
         }
     }
 
-    private static ArrayList<Integer> decodeValues(String input) {
+    public static ArrayList<Integer> decodeValues(String input) {
         char[] charArray = input.toCharArray();
         ArrayList<Integer> decodedValues = new ArrayList<>();
 
@@ -52,6 +52,7 @@ public class ConversionService {
                     currChar = charArray[index + iterator ];
                     if (currChar == 'z') {
                         while (currChar == 'z' && index + iterator  < charArray.length) {
+                            logger.info("converting character:"+ currChar);
                             value += getNumberFromChar(currChar);
                             iterator ++;
                             numberOfGroupIncrement++;
@@ -70,11 +71,13 @@ public class ConversionService {
         return decodedValues;
     }
 
-    private static int getNumberFromChar(char currChar) {
+    public static int getNumberFromChar(char currChar) {
+        logger.info("converting character:"+ currChar);
         if (currChar == '_') {
             return 0;
         } else {
             return currChar - 'a' + 1;
         }
+
     }
 }
