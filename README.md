@@ -22,6 +22,14 @@ git clone https://github.com/BaraahAlKalbani/MeasurementConversion.git
  ```
 cd MeasurementConversion
  ```
+3 - move to the API Branch or the develop Branch
+```
+git checkout API
+```
+OR :
+```
+git checkout develop
+```
 
 ## Build Instructions
  ```
