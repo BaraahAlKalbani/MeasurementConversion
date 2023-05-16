@@ -7,12 +7,23 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 
+/**
+ * REST controller for handling measurement conversion requests.
+ */
 @RestController
 @RequestMapping("/api")
 @CrossOrigin(origins = "*", allowedHeaders = {"*", "Authorization", "Content-Type"})
 public class MeasurementController {
+
     @Autowired
     private ConversionService conversionService;
+
+    /**
+     * Converts measurements based on the provided input.
+     *
+     * @param input The input string containing measurement values.
+     * @return The result of the measurement conversion.
+     */
     @GetMapping("/convert-measurements")
     public Result convertMeasurements(@RequestParam("input") String input) {
         try {
