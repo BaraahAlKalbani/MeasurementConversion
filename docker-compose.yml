@@ -1,0 +1,19 @@
+version: "3"
+services:
+  api:
+    build: .
+    image: apiapp
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./cont_logs:/app/logs
+    restart: on-failure
+  ui:
+    image: nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./src/main/resources/static:/usr/share/nginx/html
+    depends_on:
+      - api
+    restart: unless-stopped
