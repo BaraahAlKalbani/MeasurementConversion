@@ -1,0 +1,23 @@
+2023-05-17 10:03:56.532 INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.0.Final
+2023-05-17 10:03:56.594 INFO  c.M.M.MeasurementConversionApplication - Starting MeasurementConversionApplication using Java 17.0.2 with PID 18520 (C:\Users\LAP-6\Desktop\New folder (6)\MeasurementConversion\target\classes started by LAP-6 in C:\Users\LAP-6\Desktop\New folder (6)\MeasurementConversion)
+2023-05-17 10:03:56.595 INFO  c.M.M.MeasurementConversionApplication - No active profile set, falling back to 1 default profile: "default"
+2023-05-17 10:03:56.661 INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-05-17 10:03:56.662 INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-05-17 10:03:58.970 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-05-17 10:03:58.989 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-05-17 10:03:58.991 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-05-17 10:03:58.991 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-05-17 10:03:59.098 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-05-17 10:03:59.099 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2437 ms
+2023-05-17 10:04:00.838 WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2023-05-17 10:04:00.948 INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2023-05-17 10:04:00.965 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-05-17 10:04:00.994 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-17 10:04:01.011 INFO  c.M.M.MeasurementConversionApplication - Started MeasurementConversionApplication in 4.922 seconds (process running for 6.03)
+2023-05-17 10:04:19.688 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-17 10:04:19.689 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-05-17 10:04:19.693 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2023-05-17 10:04:19.784 INFO  c.M.M.Service.ConversionService - converting character:a
+2023-05-17 10:04:19.785 INFO  c.M.M.Service.ConversionService - converting character:a
+2023-05-17 10:04:19.786 INFO  c.M.M.Service.ConversionService - Input: aa
+2023-05-17 10:04:19.787 INFO  c.M.M.Service.ConversionService - Output: [1]
