@@ -42,7 +42,7 @@ public class ConversionService {
      * @throws IllegalArgumentException If the input calculation is not adding up.
      */
     public static ArrayList<Integer> decodeValues(String input) {
-        char[] charArray = input.toCharArray();
+        char[] charArray = input.toLowerCase().toCharArray();
         ArrayList<Integer> decodedValues = new ArrayList<>();
 
         int index = 0;
@@ -57,7 +57,7 @@ public class ConversionService {
                     numberOfGroupIncrement += getNumberFromChar(currChar);
                 }
             }
-            if (index + numberOfGroupIncrement > charArray.length) {
+            if (index + numberOfGroupIncrement > charArray.length-1) {
                 logger.info("Invalid Input!");
                 throw new IllegalArgumentException("Invalid input. Input calculation is not adding up!");
             }
