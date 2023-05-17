@@ -62,9 +62,7 @@ public class ConversionService {
                 throw new IllegalArgumentException("Invalid input. Input calculation is not adding up!");
             }
             if (currChar == '_') {
-                if (index < charArray.length - 1) {
-                    decodedValues.add(0);
-                }
+                decodedValues.add(0);
                 break;
             } else {
                 for (int iterator  = 1; iterator  <= numberOfGroupIncrement && index + iterator  < charArray.length; iterator ++) {

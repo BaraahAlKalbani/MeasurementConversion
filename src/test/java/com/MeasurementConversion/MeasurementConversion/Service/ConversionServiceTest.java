@@ -27,10 +27,12 @@ class ConversionServiceTest {
      */
     @Test
     void testDecodeString_ValidInput() {
-        String input = "zza_a_a_a_a_a_a_a_a_a_a_a_a_a_a_a_a_a_a_a_a_a_a_a_a_a_a_";
+        String input = "abcdabcdab_";
         ArrayList<Integer> expected = new ArrayList<>();
-        expected.add(26);
-
+        expected.add(2);
+        expected.add(7);
+        expected.add(7);
+        expected.add(0);
         ArrayList<Integer> actual = ConversionService.decodeString(input);
 
         assertEquals(expected, actual);
